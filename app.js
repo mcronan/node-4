@@ -23,12 +23,12 @@ app.get('/CapeVerde', indexController.capeverde)
 app.get('/StraitsOfMagellan', indexController.straits)
 app.get('/guam', indexController.guam)
 app.get('/Phillipines', indexController.phil)
+app.get('/noMagellen', indexController.magellen)
 
 
 app.post('/submit', function(req, res) {
 	counter ++
 	res.render(next())
-	console.log(counter)
 	if(counter > 5) {
 		res.redirect('/')
 	}
@@ -37,7 +37,6 @@ app.post('/submit', function(req, res) {
 
 //*************** Bonus ******************//
 
-
 app.get('/:unknownDest', function(req, res) {
 	var userChoice = req.params.unknownDest
 	if(userChoice !== 'seville' || 'canary' || 'capeverde' || 'straitsofmagellan' || 'guam' || 'philipines' || 'noMagellen') {
@@ -45,8 +44,6 @@ app.get('/:unknownDest', function(req, res) {
 	}
 
 })
-
-
 
 
 var server = app.listen(3030, function() {

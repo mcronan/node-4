@@ -20,6 +20,9 @@ var indexController = {
 	phil: function(req, res){
 		res.render('philipines');
 	},
+	magellen: function(req, res) {
+		res.render('noMagellen')
+	}
 };
 
 module.exports = indexController;
